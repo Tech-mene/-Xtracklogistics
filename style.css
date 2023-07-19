@@ -1,0 +1,1665 @@
+/**
+ * Table of Contents
+ *
+ * 1.0 - Reset
+ * 2.0 - Header
+ * 3.0 - Footer
+ * 4.0 - Blog
+ * 5.0 - Widget
+ * 6.0 - Responsive
+ * 7.0 - Plugins
+ * - mmenu
+ * - superfish
+ */
+
+
+/**
+ * 1.0 - Reset
+ */
+
+ html,
+ body,
+ div,
+ span,
+ applet,
+ object,
+ iframe,
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6,
+ p,
+ blockquote,
+ pre,
+ a,
+ abbr,
+ acronym,
+ address,
+ big,
+ cite,
+ code,
+ del,
+ dfn,
+ em,
+ font,
+ img,
+ ins,
+ kbd,
+ q,
+ s,
+ samp,
+ small,
+ strike,
+ strong,
+ sub,
+ sup,
+ tt,
+ var,
+ b,
+ i,
+ center,
+ dl,
+ dt,
+ dd,
+ ol,
+ ul,
+ li,
+ fieldset,
+ form,
+ label,
+ legend,
+ table,
+ caption,
+ tbody,
+ tfoot,
+ thead,
+ tr,
+ th,
+ td,
+ article,
+ aside,
+ audio,
+ canvas,
+ details,
+ figcaption,
+ figure,
+ footer,
+ header,
+ hgroup,
+ mark,
+ menu,
+ meter,
+ nav,
+ output,
+ progress,
+ section,
+ summary,
+ time,
+ video {
+     border: 0;
+     outline: 0;
+     vertical-align: baseline;
+     background: transparent;
+     margin: 0;
+     padding: 0;
+ }
+ 
+ article,
+ aside,
+ dialog,
+ figure,
+ footer,
+ header,
+ hgroup,
+ nav,
+ section,
+ blockquote {
+     display: block;
+ }
+ 
+ nav ul {
+     list-style: none;
+ }
+ 
+ ol {
+     list-style: decimal;
+ }
+ 
+ ul {
+     list-style: disc;
+ }
+ 
+ ul ul {
+     list-style: circle;
+ }
+ 
+ blockquote,
+ q {
+     quotes: none;
+ }
+ 
+ blockquote:before,
+ blockquote:after,
+ q:before,
+ q:after {
+     content: none;
+ }
+ 
+ ins {
+     text-decoration: underline;
+ }
+ 
+ del {
+     text-decoration: line-through;
+ }
+ 
+ mark {
+     background: none;
+ }
+ 
+ abbr[title],
+ dfn[title],
+ acronym[title] {
+     border-bottom: 1px dotted;
+     cursor: help;
+ }
+ 
+ table {
+     border-collapse: collapse;
+     border-spacing: 0;
+ }
+ 
+ hr {
+     display: block;
+     height: 1px;
+     border: 0;
+     border-top: 1px solid #ccc;
+     margin: 1em 0;
+     padding: 0;
+ }
+ 
+ input[type=submit],
+ input[type=button],
+ button {
+     margin: 0;
+     padding: 0;
+ }
+ 
+ input,
+ select,
+ a img {
+     vertical-align: middle;
+ }
+ 
+ b,
+ strong {
+     font-weight: bold;
+ }
+ 
+ i,
+ em {
+     font-style: italic;
+ }
+ 
+ html {
+     box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+ }
+ 
+ *,
+ *:before,
+ *:after {
+     box-sizing: inherit;
+     -moz-box-sizing: inherit;
+     -webkit-box-sizing: inherit;
+ }
+ 
+ 
+ /* generic class */
+ 
+ body {
+     -webkit-font-smoothing: antialiased;
+     -moz-osx-font-smoothing: grayscale;
+     word-wrap: break-word;
+     word-break: break-word;
+ }
+ 
+ p {
+     margin-bottom: 20px;
+ }
+ 
+ ul,
+ ol {
+     margin-left: 35px;
+     margin-bottom: 20px;
+ }
+ 
+ dl {
+     margin-bottom: 20px;
+ }
+ 
+ dl dt {
+     font-weight: 700;
+     margin-top: 10px;
+ }
+ 
+ dl dt:first-child {
+     margin-top: 0px;
+ }
+ 
+ dl dd {
+     margin-left: 20px;
+ }
+ 
+ h1,
+ h2,
+ h3,
+ h4,
+ h5,
+ h6 {
+     line-height: 1.2;
+     margin-bottom: 20px;
+ }
+ 
+ figure {
+     max-width: 100%;
+ }
+ 
+ pre {
+     overflow: auto;
+     padding: 10px 10px;
+     background: #f3f3f3;
+     margin-bottom: 20px;
+ }
+ 
+ .clear {
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+     zoom: 1;
+ }
+ 
+ .clearfix {
+     zoom: 1;
+ }
+ 
+ .clearfix:after {
+     content: " ";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+ }
+ 
+ 
+ /* wordpress core */
+ 
+ .alignnone {
+     margin: 5px 20px 20px 0;
+ }
+ 
+ .aligncenter,
+ div.aligncenter {
+     display: block;
+     margin: 5px auto 5px auto;
+ }
+ 
+ .alignright {
+     float: right;
+     margin: 5px 0 20px 20px;
+ }
+ 
+ .alignleft {
+     float: left;
+     margin: 5px 20px 20px 0;
+ }
+ 
+ a img.alignright {
+     float: right;
+     margin: 5px 0 20px 20px;
+ }
+ 
+ a img.alignnone {
+     margin: 5px 20px 20px 0;
+ }
+ 
+ a img.alignleft {
+     float: left;
+     margin: 5px 20px 20px 0;
+ }
+ 
+ a img.aligncenter {
+     display: block;
+     margin-left: auto;
+     margin-right: auto
+ }
+ 
+ .wp-caption {
+     text-align: center;
+     max-width: 100%;
+ }
+ 
+ .wp-caption.alignnone {
+     margin: 5px 20px 20px 0;
+ }
+ 
+ .wp-caption.alignleft {
+     margin: 5px 20px 20px 0;
+ }
+ 
+ .wp-caption.alignright {
+     margin: 5px 0 20px 20px;
+ }
+ 
+ .wp-caption img {
+     border: 0 none;
+     height: auto;
+     margin: 0;
+     max-width: 98.5%;
+     padding: 0;
+     width: auto;
+ }
+ 
+ .wp-caption p.wp-caption-text {
+     font-size: 11px;
+     line-height: 17px;
+     margin: 0;
+     padding: 0 4px 5px;
+ }
+ 
+ figcaption.wp-caption-text {
+     margin-top: 20px;
+ }
+ 
+ .bypostauthor {
+     max-width: 100%;
+ }
+ 
+ .gallery-caption {
+     max-width: 100%;
+ }
+ 
+ .sticky {
+     max-width: 100%;
+ }
+ 
+ .single-format-gallery figcaption.wp-caption-text {
+     margin-bottom: 20px;
+ }
+ 
+ .single-format-gallery figure.gallery-item {
+     margin-bottom: 20px;
+ }
+ 
+ .navigation {
+     text-align: left;
+     margin-bottom: 30px;
+ }
+ 
+ .navigation .screen-reader-text {
+     display: none;
+ }
+ 
+ .post-password-form input[type="password"] {
+     padding: 14px 20px;
+     margin-left: 5px;
+     margin-right: 6px;
+ }
+ 
+ body .page-links>a,
+ body .nav-links>a,
+ body .nav-links>span.dots {
+     background-color: #f0f0f0;
+     color: #919191;
+ }
+ 
+ body .page-links>span,
+ body .page-links>a:hover,
+ body .nav-links>span.current,
+ body .nav-links>a:hover {
+     background-color: #3db166;
+     color: #fff;
+ }
+ 
+ .page-links {
+     clear: left;
+     padding-top: 30px;
+     margin-bottom: 30px;
+ }
+ 
+ .page-links>span,
+ .page-links>a {
+     text-decoration: none;
+     display: inline-block;
+     font-size: 14px;
+     padding: 9px 14px;
+     margin-right: 7px;
+     font-weight: bold;
+     border-radius: 3px;
+     -moz-border-radius: 3px;
+     -webkit-border-radius: 3px;
+ }
+ 
+ body .page-links>span.screen-reader-text {
+     display: none;
+ }
+ 
+ .nav-links {
+     clear: left;
+ }
+ 
+ .nav-links>span,
+ .nav-links>a {
+     text-decoration: none;
+     display: inline-block;
+     font-size: 14px;
+     padding: 9px 14px;
+     margin-right: 3px;
+     font-weight: bold;
+     border-radius: 3px;
+     -moz-border-radius: 3px;
+     -webkit-border-radius: 3px;
+ }
+ 
+ body .nav-links a {
+     text-transform: uppercase;
+     font-weight: 600;
+     letter-spacing: 1.5px;
+     font-size: 13px;
+ }
+ 
+ nav.navigation.comment-navigation {
+     display: inline-block;
+     width: 100%;
+ }
+ 
+ .nav-links .nav-previous {
+     float: left;
+ }
+ 
+ .nav-links .nav-next {
+     float: right;
+ }
+ 
+ .wp-block-gallery {
+     margin-left: 0px;
+ }
+ 
+ .blocks-gallery-grid, .wp-block-gallery {
+     display: flex;
+ }
+ 
+ .gallery {
+     text-align: center;
+     margin-bottom: 30px;
+ }
+ 
+ .gallery:after {
+     content: " ";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+ }
+ 
+ .gallery-columns-2 .gallery-item {
+     float: left;
+     width: 50%;
+ }
+ 
+ .gallery-columns-3 .gallery-item {
+     float: left;
+     width: 33.33%;
+ }
+ 
+ .gallery-columns-4 .gallery-item {
+     float: left;
+     width: 25%;
+ }
+ 
+ .gallery-columns-5 .gallery-item {
+     float: left;
+     width: 20%;
+ }
+ 
+ .gallery-columns-6 .gallery-item {
+     float: left;
+     width: 16.66%;
+ }
+ 
+ .gallery-columns-7 .gallery-item {
+     float: left;
+     width: 14.28%;
+ }
+ 
+ .gallery-columns-8 .gallery-item {
+     float: left;
+     width: 12.5%;
+ }
+ 
+ .gallery-columns-9 .gallery-item {
+     float: left;
+     width: 11.11%;
+ }
+ 
+ .gallery-columns-10 .gallery-item {
+     float: left;
+     width: 10%;
+ }
+ 
+ .gallery-columns-2 .gallery-item:nth-child(2n + 1) {
+     clear: left;
+ }
+ 
+ .gallery-columns-3 .gallery-item:nth-child(3n + 1) {
+     clear: left;
+ }
+ 
+ .gallery-columns-4 .gallery-item:nth-child(4n + 1) {
+     clear: left;
+ }
+ 
+ .gallery-columns-5 .gallery-item:nth-child(5n + 1) {
+     clear: left;
+ }
+ 
+ .gallery-columns-6 .gallery-item:nth-child(6n + 1) {
+     clear: left;
+ }
+ 
+ .gallery-columns-7 .gallery-item:nth-child(7n + 1) {
+     clear: left;
+ }
+ 
+ .gallery-columns-8 .gallery-item:nth-child(8n + 1) {
+     clear: left;
+ }
+ 
+ .gallery-columns-9 .gallery-item:nth-child(9n + 1) {
+     clear: left;
+ }
+ 
+ .gallery-columns-10 .gallery-item:nth-child(10n + 1) {
+     clear: left;
+ }
+ 
+ 
+ /* layout */
+ 
+ .logisco-body-outer-wrapper {
+     position: relative;
+     overflow: hidden;
+ }
+ 
+ .logisco-body-wrapper.logisco-with-frame {
+     position: relative;
+ }
+ 
+ .logisco-page-wrapper {
+     clear: both;
+ }
+ 
+ body.logisco-boxed .logisco-body-wrapper {
+     margin-left: auto;
+     margin-right: auto;
+     position: relative;
+ }
+ 
+ body.logisco-boxed .logisco-body-wrapper.logisco-left {
+     margin-left: 0px;
+ }
+ 
+ body.logisco-boxed .logisco-body-wrapper.logisco-right {
+     margin-right: 0px;
+ }
+ 
+ body.logisco-boxed.logisco-boxed-border .logisco-body-wrapper {
+     box-shadow: 0px -5px 9px rgba(0, 0, 0, 0.25);
+     -webkit-box-shadow: 0px -5px 9px rgba(0, 0, 0, 0.25);
+ }
+ 
+ body.logisco-boxed.logisco-background-pattern {
+     background-position: center;
+     background-repeat: repeat;
+ }
+ 
+ .logisco-body-background {
+     position: fixed;
+     top: 0px;
+     right: 0px;
+     bottom: 0px;
+     left: 0px;
+     background-position: center;
+     background-size: cover;
+ }
+ 
+ .logisco-container {
+     margin-left: auto;
+     margin-right: auto;
+ }
+ 
+ .logisco-column-10 {
+     float: left;
+     width: 16.6666%;
+ }
+ 
+ .logisco-column-12 {
+     float: left;
+     width: 20%;
+ }
+ 
+ .logisco-column-15 {
+     float: left;
+     width: 25%;
+ }
+ 
+ .logisco-column-20 {
+     float: left;
+     width: 33.3333%;
+ }
+ 
+ .logisco-column-24 {
+     float: left;
+     width: 40%;
+ }
+ 
+ .logisco-column-30 {
+     float: left;
+     width: 50%;
+ }
+ 
+ .logisco-column-36 {
+     float: left;
+     width: 60%;
+ }
+ 
+ .logisco-column-40 {
+     float: left;
+     width: 66.6666%;
+ }
+ 
+ .logisco-column-45 {
+     float: left;
+     width: 75%;
+ }
+ 
+ .logisco-column-48 {
+     float: left;
+     width: 80%;
+ }
+ 
+ .logisco-column-50 {
+     float: left;
+     width: 83.3333%;
+ }
+ 
+ .logisco-column-60 {
+     float: left;
+     width: 100%;
+ }
+ 
+ .logisco-sidebar-right {
+     float: right;
+ }
+ 
+ .logisco-sidebar-center {
+     float: none;
+     display: inline-block;
+ }
+ 
+ .logisco-content-area {
+     padding-top: 60px;
+     padding-bottom: 30px;
+ }
+ 
+ .logisco-sidebar-area {
+     padding-top: 60px;
+ }
+ 
+ .logisco-line-height-0 {
+     line-height: 0;
+ }
+ 
+ a,
+ button {
+     text-decoration: none;
+     transition: background 300ms, color 300ms, border-color 300ms;
+     -moz-transition: background 300ms, color 300ms, border-color 300ms;
+     -o-transition: background 300ms, color 300ms, border-color 300ms;
+     -webkit-transition: background 300ms, color 300ms, border-color 300ms;
+ }
+ 
+ img {
+     max-width: 100%;
+     height: auto;
+ }
+ 
+ blockquote {
+     quotes: none;
+     padding: 30px 30px 15px;
+     font-size: 17px;
+     margin-bottom: 35px;
+     font-style: italic;
+     margin-top: 35px;
+     border-left-width: 2px;
+     border-left-style: solid;
+ }
+ 
+ .logisco-blockquote-style-2 blockquote {
+     font-size: 17px;
+     font-weight: 700;
+     padding-top: 30px;
+     padding-left: 35px;
+     padding-right: 0px;
+     font-style: italic;
+     padding-bottom: 10px;
+     border-left-width: 4px;
+ }
+ 
+ q {
+     margin-right: 15px;
+     display: inline-block;
+     padding: 10px 20px;
+     vertical-align: middle;
+     border-left-width: 2px;
+     border-left-style: solid;
+ }
+ 
+ .logisco-media-image {
+     line-height: 0;
+     position: relative;
+ }
+ 
+ .logisco-left-align {
+     text-align: left;
+ }
+ 
+ .logisco-center-align {
+     text-align: center;
+ }
+ 
+ .logisco-right-align {
+     text-align: right;
+ }
+ 
+ .logisco-body-wrapper {
+     /* overflow: hidden; */
+     z-index: 1;
+     position: relative;
+ }
+ 
+ 
+ /* input */
+ 
+ input,
+ textarea {
+     border-width: 1px 1px 2px 1px;
+     border-style: solid;
+ }
+ 
+ input:focus,
+ textarea:focus {
+     outline: none;
+ }
+ 
+ 
+ /* button */
+ 
+ .logisco-button,
+ input[type="button"],
+ input[type="submit"],
+ input[type="reset"] {
+     font-size: 13px;
+     font-weight: bold;
+     text-transform: uppercase;
+     letter-spacing: 0.8px;
+     padding: 15px 33px;
+     display: inline-block;
+     -webkit-appearance: none;
+ }
+ 
+ input[type="button"],
+ input[type="submit"],
+ input[type="reset"] {
+     border-width: 0px;
+     border-style: solid;
+     cursor: pointer;
+     transition: background 300ms, color 300ms, border-color 300ms;
+     -moz-transition: background 300ms, color 300ms, border-color 300ms;
+     -o-transition: background 300ms, color 300ms, border-color 300ms;
+     -webkit-transition: background 300ms, color 300ms, border-color 300ms;
+ }
+ 
+ input[type="button"]:focus,
+ input[type="submit"]:focus,
+ input[type="reset"]:focus {
+     outline: none;
+ }
+ 
+ 
+ /**
+  * 2.0 - Header
+  */
+ 
+ 
+ /* preload */
+ 
+ .logisco-page-preload {
+     position: fixed;
+     z-index: 999999;
+     top: 0px;
+     right: 0px;
+     bottom: 0px;
+     left: 0px;
+     background-color: #fff;
+     background-image: url('../images/preload.gif');
+     background-position: center;
+     background-repeat: no-repeat;
+ }
+ 
+ .logisco-page-preload.logisco-out {
+     background-image: none;
+ }
+ 
+ 
+ /* top bar */
+ 
+ .logisco-top-bar {
+     position: relative;
+     border-bottom-style: solid;
+ }
+ 
+ .logisco-top-bar-background {
+     position: absolute;
+     right: 0px;
+     left: 0px;
+     top: 0px;
+     bottom: 0px;
+ }
+ 
+ .logisco-top-bar-container {
+     margin-left: auto;
+     margin-right: auto;
+ }
+ 
+ .logisco-top-bar-container-inner {
+     position: relative;
+     line-height: 20px;
+ }
+ 
+ .logisco-top-bar-left {
+     float: left;
+ }
+ 
+ .logisco-top-bar-right {
+     float: right;
+ }
+ 
+ .logisco-top-bar-right-text {
+     display: inline;
+ }
+ 
+ .logisco-top-bar-right-social {
+     display: inline;
+ }
+ 
+ .logisco-top-bar-right-social a {
+     margin-left: 21px;
+ }
+ 
+ .logisco-top-bar-right-button {
+     float: right;
+     padding-left: 28px;
+     padding-right: 28px;
+     margin-left: 8px;
+     font-size: 14px;
+     font-weight: bold;
+     text-transform: uppercase;
+ }
+ 
+ .logisco-top-bar-right>div:before,
+ .logisco-top-bar-right>span:before {
+     content: "|";
+     margin-left: 25px;
+ }
+ 
+ .logisco-top-bar-right>div:first-child:before,
+ .logisco-top-bar-right>span:first-child:before {
+     display: none;
+ }
+ 
+ 
+ /* top bar menu */
+ 
+ .logisco-top-bar .logisco-top-bar-menu {
+     display: inline-block;
+     margin-right: 23px;
+     margin-bottom: 0px;
+ }
+ 
+ .logisco-top-bar .logisco-top-bar-menu>li {
+     float: none;
+     display: inline-block;
+ }
+ 
+ .logisco-top-bar .logisco-top-bar-menu>li>a {
+     display: inline;
+     margin-right: 16px;
+ }
+ 
+ .sf-menu.logisco-top-bar-menu>.logisco-normal-menu ul {
+     margin-left: 0px;
+     font-size: 13px;
+ }
+ 
+ .sf-menu.logisco-top-bar-menu>.logisco-normal-menu:first-child ul {
+     margin-left: -17px;
+ }
+ 
+ .sf-menu.logisco-top-bar-menu>.logisco-normal-menu ul li {
+     padding: 0px 18px 10px;
+ }
+ 
+ .sf-menu.logisco-top-bar-menu>.logisco-normal-menu ul li:first-child {
+     padding-top: 10px;
+ }
+ 
+ .sf-menu.logisco-top-bar-menu>.logisco-normal-menu ul li>a {
+     background: transparent;
+ }
+ 
+ .sf-menu.logisco-top-bar-menu>.logisco-normal-menu ul li>a:after {
+     margin-left: 10px;
+ }
+ 
+ .sf-menu.logisco-top-bar-menu>.logisco-mega-menu .sf-mega-full {
+     left: 0px;
+     right: 0px;
+     padding-top: 18px;
+     padding-bottom: 8px;
+ }
+ 
+ .sf-menu.logisco-top-bar-menu>.logisco-mega-menu .sf-mega-section-inner ul {
+     font-size: 13px;
+ }
+ 
+ .sf-menu.logisco-top-bar-menu>.logisco-mega-menu .sf-mega-section-inner ul li {
+     padding: 0px 18px 10px;
+ }
+ 
+ 
+ /* mobile menu */
+ 
+ .logisco-mm-menu-wrap {
+     display: none;
+ }
+ 
+ .admin-bar .mm-menu {
+     margin-top: 32px;
+ }
+ 
+ .logisco-mobile-button-hamburger-with-border {
+     font-size: 16px;
+     padding: 6px;
+     line-height: 0;
+     width: 32px;
+     height: 32px;
+     text-align: center;
+     display: inline-block;
+     border-width: 2px;
+     border-style: solid;
+     border-radius: 3px;
+     -moz-border-radius: 3px;
+     -webkit-border-radius: 3px;
+     box-sizing: border-box;
+     -moz-box-sizing: border-box;
+     -webkit-box-sizing: border-box;
+ }
+ 
+ .logisco-right-menu-button {
+     display: inline-block;
+     margin-left: 27px;
+ }
+ 
+ .logisco-mobile-menu {
+     float: left;
+     margin-top: -8px;
+     margin-left: 30px;
+ }
+ 
+ .logisco-mobile-menu-right {
+     position: absolute;
+     right: 30px;
+     top: 50%;
+     margin-top: -9px;
+ }
+ 
+ .logisco-mobile-menu-left {
+     position: absolute;
+     left: 30px;
+     top: 50%;
+     margin-top: -9px;
+ }
+ 
+ .logisco-mobile-menu-left .logisco-mobile-menu {
+     margin-left: 0px;
+ }
+ 
+ .logisco-mobile-header .logisco-mobile-logo-center .logisco-logo-inner {
+     margin-left: auto;
+     margin-right: auto;
+ }
+ 
+ 
+ /* hamburger */
+ 
+ .logisco-mobile-button-hamburger {
+     box-sizing: border-box;
+     display: block;
+     width: 32px;
+     height: 32px;
+     position: relative;
+ }
+ 
+ .logisco-mobile-button-hamburger:before,
+ .logisco-mobile-button-hamburger:after,
+ .logisco-mobile-button-hamburger span {
+     content: '';
+     display: block;
+     width: 22px;
+     height: 2px;
+     position: absolute;
+     left: 5px;
+ }
+ 
+ .logisco-mobile-button-hamburger:before {
+     top: 8px;
+ }
+ 
+ .logisco-mobile-button-hamburger span {
+     top: 15px;
+ }
+ 
+ .logisco-mobile-button-hamburger:after {
+     top: 22px;
+ }
+ 
+ .logisco-mobile-button-hamburger:before {
+     transition-duration: 0.4s;
+     transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+ }
+ 
+ .logisco-mobile-button-hamburger span {
+     transition: opacity 0.15s 0.4s ease;
+ }
+ 
+ .logisco-mobile-button-hamburger:after {
+     transition: -webkit-transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+     transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+ }
+ 
+ .logisco-mobile-button-hamburger.logisco-active:before {
+     -webkit-transform: translate3d(0, 7px, 0) rotate(135deg);
+     transform: translate3d(0, 7px, 0) rotate(135deg);
+     transition-delay: 0.1s;
+ }
+ 
+ .logisco-mobile-button-hamburger.logisco-active span {
+     transition-delay: 0s;
+     opacity: 0;
+ }
+ 
+ .logisco-mobile-button-hamburger.logisco-active:after {
+     transition-delay: 0.1s;
+     -webkit-transform: translate3d(0, -7px, 0) rotate(-135deg);
+     transform: translate3d(0, -7px, 0) rotate(-135deg);
+ }
+ 
+ 
+ /* navigation menu */
+ 
+ .logisco-navigation .sf-menu {
+     display: inline-block;
+     line-height: 1.7;
+     text-align: left;
+     margin-bottom: 0px;
+ }
+ 
+ .logisco-navigation .sf-menu>li:first-child {
+     padding-left: 0px;
+ }
+ 
+ .logisco-navigation .sf-menu>li:last-child {
+     padding-right: 0px;
+ }
+ 
+ .logisco-navigation .sf-menu>li>a {
+     letter-spacing: 0.5px;
+ }
+ 
+ .logisco-navigation-submenu-indicator .sf-menu>li>a.sf-with-ul-pre:after {
+     display: inline-block;
+     margin-left: 13px;
+     content: "\f107";
+     font-family: fontAwesome;
+ }
+ 
+ .logisco-navigation .sf-menu>.logisco-normal-menu li {
+     padding: 1px 11px;
+ }
+ 
+ .logisco-navigation .sf-menu>.logisco-normal-menu li:first-child {
+     padding-top: 12px;
+ }
+ 
+ .logisco-navigation .sf-menu>.logisco-normal-menu li:last-child {
+     padding-bottom: 12px;
+ }
+ 
+ .logisco-navigation .sf-menu>.logisco-normal-menu li li {
+     /* padding-left: 0; */
+ }
+ 
+ .logisco-navigation .sf-menu>.logisco-normal-menu li>a {
+     display: block;
+     padding: 6px 30px 6px 12px;
+     position: relative;
+ }
+ 
+ .logisco-navigation .sf-menu>.logisco-normal-menu li>a.sf-with-ul-pre:after {
+     position: absolute;
+     right: 10px;
+     content: "\f105";
+     font-family: fontAwesome;
+ }
+ 
+ .logisco-navigation .sf-menu>.logisco-normal-menu .sub-menu {
+     font-size: 14px;
+ }
+ 
+ .logisco-navigation .sf-menu>.logisco-mega-menu .sf-mega-full {
+     left: 0px;
+     right: 0px;
+ }
+ 
+ .logisco-navigation .sf-menu>.logisco-mega-menu .sf-mega-section-wrap {
+     overflow: hidden;
+     border-top-width: 1px;
+     border-top-style: solid;
+ }
+ 
+ .logisco-navigation .sf-menu>.logisco-mega-menu .sf-mega-section-wrap:first-child {
+     border-top: none;
+ }
+ 
+ .logisco-navigation .sf-menu>.logisco-mega-menu .sf-mega-section {
+     padding-bottom: 999px;
+     margin-bottom: -999px;
+     border-left-width: 1px;
+     border-left-style: solid;
+ }
+ 
+ .logisco-navigation .sf-menu>.logisco-mega-menu .sf-mega-section:first-child {
+     border-left: none;
+ }
+ 
+ .logisco-navigation .sf-menu>.logisco-mega-menu .sf-mega-section-inner {
+     padding: 31px 28px;
+ }
+ 
+ .logisco-navigation .sf-menu>.logisco-mega-menu .sf-mega-section-inner>a {
+     font-size: 15px;
+     display: block;
+     margin-bottom: 12px;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     font-weight: bold;
+     padding: 0px 12px;
+ }
+ 
+ .logisco-navigation .sf-menu>.logisco-mega-menu .sf-mega-section-inner .sub-menu a {
+     font-size: 14px;
+     padding: 5px 12px;
+     display: block;
+ }
+ 
+ .logisco-navigation .logisco-navigation-slide-bar {
+     border-bottom-width: 1px;
+     border-bottom-style: solid;
+     position: absolute;
+     display: none;
+     margin-top: -1px;
+     overflow: hidden;
+ }
+ 
+ .logisco-fixed-navigation .logisco-navigation .logisco-navigation-slide-bar {
+     margin-top: -1px;
+ }
+ 
+ .logisco-navigation .sf-menu a i {
+     margin-right: 10px;
+ }
+ 
+ .logisco-navigation .sf-vertical>li {
+     border-bottom-width: 1px;
+     border-bottom-style: solid;
+ }
+ 
+ .logisco-navigation .sf-vertical>li:first-child {
+     padding-top: 0px;
+ }
+ 
+ .logisco-navigation .sf-vertical>li>a {
+     font-weight: 800;
+     text-transform: uppercase;
+     letter-spacing: 0.5px;
+     display: block;
+ }
+ 
+ .logisco-navigation .sf-vertical ul.sub-menu {
+     font-size: 14px;
+     box-sizing: content-box;
+     -moz-box-sizing: content-box;
+     -webkit-box-sizing: content-box;
+ }
+ 
+ .logisco-navigation .sf-vertical ul.sub-menu li {
+     padding: 2px 11px;
+ }
+ 
+ .logisco-navigation .sf-vertical ul.sub-menu li:first-child {
+     padding-top: 20px;
+ }
+ 
+ .logisco-navigation .sf-vertical ul.sub-menu li:last-child {
+     padding-bottom: 20px;
+ }
+ 
+ .logisco-navigation .sf-vertical ul.sub-menu li>a {
+     display: block;
+     padding: 4px 12px;
+ }
+ 
+ .logisco-navigation .sf-vertical ul.sub-menu li>a.sf-with-ul:after,
+ .logisco-navigation-submenu-indicator .sf-vertical>li>a.sf-with-ul:after {
+     float: right;
+     margin-left: 18px;
+     content: "\f105";
+     font-family: fontAwesome;
+ }
+ 
+ 
+ /* bullet anchor */
+ 
+ .logisco-bullet-anchor {
+     position: fixed;
+     top: 50%;
+     right: 30px;
+     margin-top: -50px;
+     z-index: 10;
+     opacity: 0;
+     transition: opacity 200ms;
+     -moz-transition: opacity 200ms;
+     -o-transition: opacity 200ms;
+     -webkit-transition: opacity 200ms;
+ }
+ 
+ .logisco-bullet-anchor.logisco-init {
+     opacity: 1;
+ }
+ 
+ .logisco-bullet-anchor a {
+     display: block;
+     width: 17px;
+     height: 17px;
+     margin-bottom: 5px;
+     overflow: hidden;
+     border-width: 1px;
+     border-style: solid;
+     border-color: transparent;
+     border-radius: 50%;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+ }
+ 
+ .logisco-bullet-anchor a:before {
+     content: " ";
+     width: 9px;
+     height: 9px;
+     margin: 3px;
+     display: block;
+     overflow: hidden;
+     border-radius: 50%;
+     -moz-border-radius: 50%;
+     -webkit-border-radius: 50%;
+     transition: background-color 200ms;
+     -moz-transition: background-color 200ms;
+     -o-transition: background-color 200ms;
+     -webkit-transition: background-color 200ms;
+ }
+ 
+ 
+ /* breadcrumbs */
+ 
+ .logisco-breadcrumbs a {
+     color: #c0c0c0;
+ }
+ 
+ .logisco-breadcrumbs,
+ .logisco-breadcrumbs a:hover {
+     color: #777;
+ }
+ 
+ .logisco-breadcrumbs {
+     font-size: 15px;
+     padding: 17px 0px;
+     border-bottom-width: 1px;
+     border-bottom-style: solid;
+ }
+ 
+ .logisco-breadcrumbs-item>span {
+     margin: 0px 22px;
+ }
+ 
+ .logisco-breadcrumbs-item>span:first-child {
+     margin-left: 0px;
+ }
+ 
+ .logisco-breadcrumbs-item a span {
+     transition: color 200ms;
+     -moz-transition: color 200ms;
+     -o-transition: color 200ms;
+     -webkit-transition: color 200ms;
+ }
+ 
+ 
+ /* top search */
+ 
+ .logisco-top-search-wrap input.search-field {
+     border-bottom-color: #303030;
+     color: #fff;
+ }
+ 
+ .logisco-top-search-wrap .logisco-top-search-submit,
+ .logisco-top-search-wrap .logisco-top-search-close {
+     color: #fff;
+ }
+ 
+ .logisco-top-search-wrap input::-webkit-input-placeholder {
+     color: #fff;
+ }
+ 
+ .logisco-top-search-wrap input::-moz-placeholder {
+     color: #fff;
+ }
+ 
+ .logisco-top-search-wrap input:-ms-input-placeholder {
+     color: #fff;
+ }
+ 
+ .logisco-top-search-wrap input:-moz-placeholder {
+     color: #fff;
+ }
+ 
+ .logisco-top-search-row {
+     display: table;
+     width: 100%;
+     height: 100%;
+ }
+ 
+ .logisco-top-search-cell {
+     display: table-cell;
+     vertical-align: middle;
+     padding-left: 30px;
+     padding-right: 30px;
+ }
+ 
+ .logisco-top-search-wrap {
+     position: fixed;
+     left: 0px;
+     right: 0px;
+     top: 0px;
+     bottom: 0px;
+     z-index: 9999;
+     overflow-y: auto;
+     display: none;
+ }
+ 
+ .logisco-top-search-wrap form {
+     max-width: 630px;
+     margin-left: auto;
+     margin-right: auto;
+     position: relative;
+ }
+ 
+ .logisco-top-search-wrap input.search-field {
+     background: transparent;
+     width: 100%;
+     border-width: 0px 0px 3px;
+     font-size: 40px;
+     padding: 0px 120px 25px 0px;
+     line-height: 48px;
+     letter-spacing: 0.5px;
+ }
+ 
+ .logisco-top-search-wrap input.search-submit {
+     position: absolute;
+     top: 0px;
+     right: 52px;
+     width: 48px;
+     height: 48px;
+     padding: 0px;
+     opacity: 0;
+     filter: alpha(opacity=0);
+ }
+ 
+ .logisco-top-search-wrap .logisco-top-search-submit {
+     font-size: 30px;
+     position: absolute;
+     right: 52px;
+     top: 0px;
+     line-height: 48px;
+     width: 48px;
+     text-align: center;
+ }
+ 
+ .logisco-top-search-wrap .logisco-top-search-close {
+     font-size: 55px;
+     position: absolute;
+     top: 0px;
+     right: 0px;
+     line-height: 48px;
+     width: 48px;
+     text-align: center;
+     cursor: pointer;
+ }
+ 
+ 
+ /* overlay menu */
+ 
+ .logisco-overlay-menu-row {
+     display: table;
+     width: 100%;
+     height: 100%;
+ }
+ 
+ .logisco-overlay-menu-cell {
+     display: table-cell;
+     vertical-align: middle;
+ }
+ 
+ .logisco-overlay-menu-content {
+     position: fixed;
+     left: 0px;
+     right: 0px;
+     top: 0px;
+     bottom: 0px;
+     z-index: 9999;
+     overflow-y: auto;
+     display: none;
+ }
+ 
+ .logisco-overlay-menu-content ul.menu {
+     list-style: none;
+     text-align: center;
+     padding-top: 180px;
+     padding-bottom: 140px;
+     max-width: 570px;
+     margin-left: auto;
+     margin-right: auto;
+     margin-bottom: 0px;
+ }
+ 
+ .logisco-overlay-menu-content ul.menu>li {
+     font-size: 23px;
+     font-weight: bold;
+     text-transform: uppercase;
+     opacity: 0;
+     margin-bottom: 17px;
+     padding-bottom: 17px;
+     letter-spacing: 1px;
+     border-bottom-width: 1px;
+     border-bottom-style: solid;
+     -webkit-transform: translate3d(0, -30px, 0);
+     transform: translate3d(0, -30px, 0);
+     transition: opacity 300ms, transform 300ms;
+     -moz-transition: opacity 300ms, -moz-transform 300ms;
+     -o-transition: opacity 300ms, -o-transform 300ms;
+     -webkit-transition: opacity 300ms, -webkit-transform 300ms;
+ }
+ 
+ .logisco-overlay-menu-content.logisco-active ul.menu>li {
+     opacity: 1;
+     filter: alpha(opacity=100);
+     -webkit-transform: none;
+     transform: none;
+ }
+ 
+ .logisco-overlay-menu-content ul.sub-menu {
+     display: none;
+     padding-top: 25px;
+     padding-bottom: 10px;
+     list-style: none;
+     margin-left: 0px;
+     margin-bottom: 0px;
+ }
+ 
+ .logisco-overlay-menu-content ul.sub-menu>li {
+     font-size: 14px;
+     text-transform: none;
+     font-weight: normal;
+     margin-bottom: 15px;
+ }
+ 
+ .logisco-overlay-menu-content ul.sub-menu ul.sub-menu {
+     max-width: 380px;
+     margin: 25px auto 25px;
+     border-top-width: 1px;
+     border-bottom-width: 1px;
+     border-style: solid;
+ }
+ 
+ .logisco-overlay-menu-content .logisco-overlay-menu-close {
+     line-height: 1;
+     font-size: 48px;
+     position: absolute;
+     left: 50%;
+     top: 75px;
+     margin-left: -24px;
+     cursor: pointer;
+ }
+ 
+ .logisco-overlay-menu-content .logisco-overlay-menu-close:after {
+     content: "\4d";
+     font-family: elegantIcons;
+ }
+ 
+ .logisco-overlay-menu-content ul li.menu-item-has-children>a:after {
+     content: "\f107";
+     font-family: "fontAwesome";
+     margin-left: 15px;
+ }
+ 
+ body.admin-bar .logisco-overlay-menu-content {
+     margin-top: 32px;
+     overflow-y: scroll;
+ }
+ 
+ 
+ /* menu right area */
+ 
+ .logisco-main-menu-right-button {
+     float: left;
+     padding: 8px 15px;
+     font-size: 11px;
+     font-weight: bold;
+     text-transform: uppercase;
+     letter-spacing: 1px;
+     margin-top: -11px;
+     margin-left: 30px;
+     border-radius: 3px;
+     border-width: 2px;
+     border-style: solid;
+ }
+ 
+ .logisco-main-menu-right-button.logisco-style-round {
+     padding: 13px 21px 14px;
+     margin-top: -14px;
+     border-radius: 30px;
+     -moz-border-radius: 30px;
+     -webkit-border-radius: 30px;
+ }
+ 
+ .logisco-main-menu-right-button.logisco-style-round-with-shadow {
+     padding: 13px 21px 14px;
+     margin-top: -14px;
+     box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.11);
+     -webkit-box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.11);
+     border-radius: 30px;
+     -moz-border-radius: 30px;
+     -webkit-border-radius: 30px;
+ }
+ 
+ .logisco-main-menu-right {
+     float: left;
+     margin-top: -8px;
+ }
+ 
+ .logisco-main-menu-search {
+     float: left;
+     margin-top: -5px;
+     margin-left: 25px;
+ }
+ 
+ .logisco-main-menu-search i {
+     font-size: 14px;
+     margin-top: -1px;
+     cursor: pointer;
+ }
+ 
+ .logisco-main-menu-cart {
+     float: left;
+     margin-top: -4px;
+     padding-left: 20px;
+     margin-left: 5px;
+     position: relative;
+ }
+ 
+ .logisco-main-menu-cart i {
+     font-size: 16px;
+     margin-top: -1px;
+     cursor: pointer;
+ }
+ 
+ .logisco-main-menu-cart>.logisco-top-cart-count {
+     font-size: 10px;
+     font-weight: 700;
+     vertical-align: super;
+ }
